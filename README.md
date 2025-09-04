@@ -1,4 +1,4 @@
-<h1 style="text-align:center; color:#111; font-weight:bold;"><p><a href="https://bnode.netlify.app" target="_blank" style="color:#555; text-decoration:underline;">bnode - Web Oficial /a></p></h1>
+<h1 style="text-align:center; color:#111; font-weight:bold;"><p><a href="https://bnode.netlify.app" target="_blank" style="color:#555; text-decoration:underline;">bnode - Web Oficial </p></h1>
 
 <p style="text-align:center; font-size:1.05em;">
 Repositorio que contiene los archivos necesarios para la web oficial de <strong>bnode</strong>, empresa especializada en diseño web, desarrollo de aplicaciones, branding y servidores de Discord.  
