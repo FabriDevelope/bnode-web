@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNode - Sitio en Mantenimiento</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            text-align: center;
+            padding: 40px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Logo y título */
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: #888;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        
+        /* Mensaje */
+        .message {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        /* Servicios */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .service {
+            background-color: #111;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service h3 {
+            color: #888;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Botón */
+        .dev-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dev-button:hover {
+            background-color: #222;
+            border-color: #888;
+            color: #fff;
+        }
+        
+        .dev-button:active {
+            transform: scale(0.98);
+        }
+        
+        /* Animación de parpadeo */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .blink {
+            animation: blink 2s infinite;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+            
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">B<span>node</span></div>
+        <h1>Sitio en <span class="blink">Mantenimiento</span></h1>
+        
+        <div class="message">
+            Estoy trabajando para mejorar tu experiencia. Este sitio web está en mantenimiento y estara disponible pronto con muchas cosas y funcionalidades mejoradas.
+        </div>
+        
+        <div class="services">
+            <div class="service">
+                <h3>DISEÑO WEB</h3>
+                <p>Sitios a medida</p>
+            </div>
+            <div class="service">
+                <h3>APLICACIONES</h3>
+                <p>Desktop</p>
+            </div>
+            <div class="service">
+                <h3>BRANDING</h3>
+                <p>Identidad visual</p>
+            </div>
+            <div class="service">
+                <h3>DISCORD</h3>
+                <p>Servidores</p>
+            </div>
+        </div>
+        
+        <a href="https://fabridevs.netlify.app" class="dev-button" target="_blank">Desarrollador</a>
+    </div>
+
+    <script>
+        // Efecto de escritura para el título
+        document.addEventListener('DOMContentLoaded', function() {
+            const message = "Estoy trabajando para mejorar tu experiencia. Este sitio web está en mantenimiento y estara disponible pronto con muchas cosas y funcionalidades mejoradas.";
+            const messageElement = document.querySelector('.message');
+            
+            // Efecto de aparición gradual
+            let i = 0;
+            messageElement.textContent = '';
+            
+            function typeWriter() {
+                if (i < message.length) {
+                    messageElement.textContent += message.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 20);
+                }
+            }
+            
+            // Iniciar la animación después de un breve retraso
+            setTimeout(typeWriter, 1000);
+            
+            // Efecto de rotación para los servicios
+            const services = document.querySelectorAll('.service');
+            services.forEach(service => {
+                service.addEventListener('mouseenter', () => {
+                    service.style.transform = 'rotateY(180deg)';
+                });
+                
+                service.addEventListener('mouseleave', () => {
+                    service.style.transform = 'rotateY(0deg)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
